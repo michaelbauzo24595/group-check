@@ -66,5 +66,6 @@ def get_user_rank(user_id, group_id):
         } if next_rank_info else "User is at the highest rank or no higher rank found."
     })
 
-if __name__ == '__main__':
-        app.run(debug=True, port=5000)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # fallback if PORT not set
+    app.run(host="0.0.0.0", port=port)
